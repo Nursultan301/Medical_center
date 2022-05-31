@@ -5,6 +5,7 @@ class Doctor(models.Model):
     """Врачи"""
     name = models.CharField("Имя", max_length=50)
     description = models.TextField("Описание")
+    position = models.CharField("Должность", max_length=50)
     img = models.ImageField(upload_to='doctors/')
 
     class Meta:

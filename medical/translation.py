@@ -5,4 +5,4 @@ from medical.models import Doctor
 
 @register(Doctor)
 class DoctorTranslation(TranslationOptions):
-    fields = ('name', 'description')
+    fields = ('name', 'description', 'position')

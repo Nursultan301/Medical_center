@@ -1,11 +1,16 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+from modeltranslation.admin import TranslationAdmin
 
 from medical.models import Doctor, Enroll, Feedback, Subscription
 
 
 @admin.register(Doctor)
-class DoctorAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'img')
+class DoctorAdmin(TranslationAdmin):
+    list_display = ('name', 'description', 'get_photo')
+
+    def get_photo(self, obj):
+        return mark_safe(f'<img src="{obj.img.url}" width="75">')
 
 
 @admin.register(Enroll)
