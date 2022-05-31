@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Doctors(models.Model):
+class Doctor(models.Model):
     """Врачи"""
     name = models.CharField("Имя", max_length=50)
     description = models.TextField("Описание")
@@ -28,7 +28,7 @@ class Enroll(models.Model):
     email = models.EmailField("E-mail")
     weeks = models.CharField("Недели", max_length=50, choices=WEEK, default="sun")
     time = models.TimeField("Время")
-    doctors = models.ForeignKey(Doctors, on_delete=models.CASCADE, verbose_name="Врачи")
+    doctors = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name="Врачи")
     messages = models.TextField("Сообщения")
 
     class Meta:
@@ -56,7 +56,7 @@ class Feedback(models.Model):
 
 class Subscription(models.Model):
     email = models.EmailField("E-mail")
-    date = models.DateTimeField("Дата")
+    date = models.DateTimeField("Дата", auto_now_add=True)
 
     class Meta:
         verbose_name = "Подписка"
