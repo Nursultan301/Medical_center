@@ -16,13 +16,16 @@ class DoctorAdmin(TranslationAdmin):
 @admin.register(Enroll)
 class EnrollAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'weeks', 'time', 'doctors')
+    readonly_fields = ('name', 'email', 'weeks', 'time', 'doctors', 'messages')
 
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'telephone')
+    list_display = ('name', 'email', 'phone')
+    readonly_fields = ('name', 'email', 'phone', 'requirements', 'messages')
 
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
     list_display = ('email', 'date')
+    readonly_fields = ('email',)

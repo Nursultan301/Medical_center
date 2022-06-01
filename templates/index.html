@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>{% trans "Медицинский центр" %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/fevicon.ico.png' %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <script src="{% static 'js/modernizer.js' %}"></script>
+
+</head>
+<body class="clinic_version">
+<!-- LOADER -->
+<div id="preloader">
+    <img class="preloader" src="{% static 'images/loaders/heart-loading2.gif' %}" alt="loader">
+</div>
+<!-- END LOADER -->
+<header>
+    <div class="container">
+        <nav class="menu">
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+            </div>
+            <ul class="menu__list">
+                <li><a href="/">{% trans "Главная" %}</a></li>
+                <li><a data-scroll href="#about">{% trans "О нас" %}</a></li>
+                <li><a data-scroll href="#service">{% trans "Услуги" %}</a></li>
+                <li><a data-scroll href="#doctors">{% trans "Врачи" %}</a></li>
+                <li><a data-scroll href="#testimonials">{% trans "Отзывы" %}</a></li>
+                <li><a data-scroll href="#getintouch">{% trans "Контакты" %}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
+     style="background-image:url('{% static 'images/slider-bg.png' %}'); height: 800;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="text-contant">
+                    <h2>
+                        <span class="center"><span class="icon"><img src="{% static 'images/icon-logo.png' %}" alt="#"/></span></span>
+                        <a href="" class="typewrite" data-period="2000"
+                           data-type='[ "{% trans "Добро пожаловать в медицинский центр" %}" ]'>
+                            <span class="wrap"></span>
+                        </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="time-table" class="time-table-section">
+    <div class="container">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="service-time one" style="background:#2895f1;">
+                    <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
+                    <h3>{% trans "Экстренная ситуация" %} </h3>
+                    <p>{% trans "Если у Вас есть проблемы только со здоровьем, звоните 103 — мы поможем." %} </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="service-time middle" style="background:#0071d1;">
+                    <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                    <h3>{% trans "Рабочее время" %} </h3>
+                    <div class="time-table-section">
+                        <ul>
+                            <li><span class="left">{% trans "Понедельник - Пятница" %} </span><span class="right">8.00 – 18.00</span>
+                            </li>
+                            <li><span class="left">{% trans "Суббота" %} </span><span class="right">9.00 – 16.00</span></li>
+                            <li><span class="left">{% trans "Воскресенье" %} </span><span class="right">9.00 – 14.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="service-time three" style="background:#0060b1;">
+                    <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                    <h3>{% trans "График работы клиники" %} </h3>
+                    <p>{% trans "Понедельник-Пятница: с 8:00 до 18:00" %}  <br> {% trans "Суббота: с 9:00 до 16:00" %}  <br> {% trans "Воскресенье: 9:00 – 14:00" %} 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="section wow fadeIn">
+    <div class="container">
+        <div class="heading">
+            <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+            <h2>{% trans "О нас" %} </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="message-box">
+                    <h4>{% trans "Что мы делаем" %} </h4>
+                    <h2>{% trans "Клиника Сервис" %} </h2>
+                    <p class="lead">
+                        {% blocktrans %}
+                             Здесь вы можете получить консультации специалистов различного профиля, прием ведут:
+                        Доктора медицинских наук, профессора, отличники здравоохранения и врачи высшей и первой
+                        категории.
+                        {% endblocktrans %}
+                       </p>
+                    <p>
+                        {% blocktrans %}
+                        Медицинский центр.kg оснащен отличной диагностической базой, где проводятся лабораторные,
+                        ультразвуковые, эндоскопические, электрофизиологические обследования на современном
+                        оборудовании.
+                        {% endblocktrans %}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="post-media wow fadeIn">
+                    <img src="{% static 'images/about_03.jpg' %}" alt="" class="img-responsive">
+                    <a href="https://youtu.be/0we7ZLjFtds" data-rel="prettyPhoto[gal]" class="playbutton"><i
+                            class="flaticon-play-button"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="hr1">
+        <div class="row">
+            <div class="owl-carousel slide-one">
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <a href="{% static 'images/clinic_01.jpg' %}" data-rel="prettyPhoto[gal]"
+                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'images/clinic_01.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                    <h3>{% trans "Цифровой центр управления" %} </h3>
+                </div>
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <a href="{% static 'images/clinic_02.jpg' %}" data-rel="prettyPhoto[gal]"
+                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'images/clinic_02.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                    <h3>{% trans "Гигиеническая операционная" %} </h3>
+                </div>
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <a href="{% static 'images/clinic_03.jpg' %}" data-rel="prettyPhoto[gal]"
+                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'images/clinic_03.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                    <h3>{% trans "Гигиеническая операционная" %} </h3>
+                </div>
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <a href="{% static 'images/clinic_04.jpg' %}" data-rel="prettyPhoto[gal]"
+                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'images/clinic_04.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                    <h3>{% trans "Врачи-специалисты" %} </h3>
+                </div>
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <a href="{% static 'images/clinic_05.jpg' %}" data-rel="prettyPhoto[gal]"
+                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'images/clinic_05.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                    <h3>{% trans "Врачи-специалисты" %} </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="service" class="services wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <div class="inner-services">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon1.png' %}"
+                                                            alt="#"/></span>
+                            <h4><b>{% trans "Премиум Услуги</b> Опытные врачи. Нет лишних назначений. Качественный сервис" %} </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon2.png' %}"
+                                                            alt="#"/></span>
+                            <h4>
+                                {% blocktrans %}
+                                <b>Большая лаборатория</b> Информация об услугах медицинской лаборатории в Великом
+                                Новгороде,</h4>
+                                {% endblocktrans %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon3.png' %}"
+                                                            alt="#"/></span>
+                            <h4>
+                                {% blocktrans %}
+                                <b>Подробный специалист</b> Портал для специалистов (МИС в качестве сервиса)
+                                обеспечивает выполнение функций
+                                {% endblocktrans %}
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon4.png' %}"
+                                                            alt="#"/></span>
+                            <h4>
+                                {% blocktrans %}
+                                <b>Детский центр</b> На базе Малыша работают: Детский лечебно-консультационный,
+                                реабилитационный медицинский центр
+                                {% endblocktrans %}
+                                </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon5.png' %}"
+                                                            alt="#"/></span>
+                            <h4>
+                                {% blocktrans %}
+                                <b>Прекрасная инфраструктура</b> То, что в Малаге находится интернациональный аэропорт,
+                                хорошая инфраструктура, прекрасная гастрономия и туристические места
+                                {% endblocktrans %} </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                            <span class="icon-service"><img src="{% static 'images/service-icon6.png' %}"
+                                                            alt="#"/></span>
+                            <h4>
+                                {% blocktrans %}
+                                <b>Банк крови в любое время</b> Военнослужащий, являющийся донором, в день медицинского
+                                обследования освобождается от несения нарядов
+                                {% endblocktrans %} 
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="appointment-form">
+                    <h3><span>+</span> {% trans "Записаться на прием" %} </h3>
+                    <div class="form">
+                        <form method="post">
+                            {% csrf_token %}
+                            <fieldset>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            {{ form.name }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            {{ form.email }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-section">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            {{ form.weeks }}
+                                        </div>
+                                        <div class="form-group">
+                                                {{ form.time }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            {{ form.doctors }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            {{ form.messages }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="center">
+                                                <button type="submit">{% trans "Отправить" %}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;"
+     data-scroll-id="doctors" tabindex="-1">
+    <div class="doctors__profile" style="text-align: center; margin-bottom: 60px;">
+        <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+        <h2>{% trans "Врачи" %} </h2>
+    </div>
+    <div class="container">
+
+        <div class="owl-carousel slide-two">
+            {% for doctor in doctors %}
+            	<div class="item">
+                <div class="doctors__profile" style="text-align: center;">
+                    <img src="{{ doctor.img.url }}" alt="">
+                    <div class="doctors__profile title">
+                        <h4 style="background: linear-gradient(to right, #1d86df 0%, #39b49a 100%); padding: 8px 20px; color: #fff; margin: 15px 0;">
+                            {{ doctor.name }}</h4>
+                        <small style="display: inline-block; font-size: 14px; color: #1d86df;">{{ doctor.position }}</small>
+                    </div>
+                    <p style="font-size: 16px;">{{ doctor.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="testimonials" class="section wb wow fadeIn">
+    <div class="container">
+        <div class="heading">
+            <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+            <h2>{% trans "Отзывы" %} </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="testimonial clearfix">
+                    <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i></h3>
+                        <p class="lead">Очень приятно заходить к вам. Так искренне и добродушно встречают и помогают.
+                            Так держать, молодцы!</p>
+                    </div>
+                    <div class="testi-meta">
+                        <img src="{% static 'images/test-01.jpg' %}" alt="" class="img-responsive alignleft">
+                        <h4>Диана Овганова<small> Отзыв в <span style="color: #8a3ab9;">Instagram</span></small></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="testimonial clearfix">
+                    <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i></h3>
+                        <p class="lead">Ещё раз убедилась в том, что центр хороший и врачи знают своё дело. Всё
+                            понравилось. И обслуживание и врачи. Спасибо вам.</p>
+                    </div>
+                    <div class="testi-meta">
+                        <img src="{% static 'images/test-03.jpg' %}" alt="" class="img-responsive alignleft">
+                        <h4>Людмила Лукьянова <small> Отзыв в <span style="color: green;">2Gis</span></small></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="invis">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="testimonial clearfix">
+                    <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i></h3>
+                        <p class="lead">Хорошая клиника. Остались очень хорошие впечатления. Чуткий и доброжелательный
+                            персонал. Профессиональный подход к своему делу.</p>
+                    </div>
+                    <div class="testi-meta">
+                        <img src="{% static 'images/test.jpg' %}" alt="" class="img-responsive alignleft">
+                        <h4>Айдана Кабиева <small> Отзыв в <span style="color: green;">2Gis</span></small></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="testimonial clearfix">
+                    <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i></h3>
+                        <p class="lead">Очень приятно заходить к вам. Так искренне и добродушно встречают и помогают.
+                            Так держать, молодцы!</p>
+                    </div>
+                    <div class="testi-meta">
+                        <img src="{% static 'images/test-04.jpg' %}" alt="" class="img-responsive alignleft">
+                        <h4>Диана Овганова<small> Отзыв в <span style="color: #8a3ab9;">Instagram</span></small></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
+         <div class="container">
+            <div class="heading">
+               <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+               <h2>{% trans "Связаться" %}</h2>
+            </div>
+         </div>
+         <div class="contact-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.1567299374974!2d74.57484691541103!3d42.86953597915589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec83be79cb4c9%3A0x1d05e546c24b064!2zMTU0INGD0LsuINCn0L7QutC80L7RgNC-0LLQsCwg0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1653824690485!5m2!1sru!2skg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+         <div class="form-contant">
+            <form method="post" action="{% url 'create_feedback' %}">
+                {% csrf_token %}
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group in_name">
+                         {{ feedback.name }}
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group in_email">
+                         {{ feedback.email }}
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group in_email">
+                         {{ feedback.phone }}
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group in_email">
+                         {{ feedback.requirements }}
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="form-group in_message">
+                         {{ feedback.messages }}
+                     </div>
+                     <div class="actions">
+                        <input type="submit" value="Отправить сообщение" name="submit" id="submitButton" class="btn small" title="Submit Your Message!">
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+<footer id="footer" class="footer-area wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo padding">
+                    <a href=""><img src="{% static 'images/logo.svg' %}" alt=""></a>
+                    <p>{% trans "Медицинский центр «MEDCENTER.KG» — это многопрофильная клиника, расположенная в самом центре Бишкека ." %} </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-info padding">
+                    <h3>{% trans "СВЯЖИТЕСЬ С НАМИ" %} </h3>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> {% trans "Чокморова, 154 — 0-3 этаж" %} </p>
+                    <p><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:lifecare@gmail.com">lifecare@gmail.com</a>
+                    </p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:996 700 500 500">+996 700 500 500</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="subcriber-info">
+                    <h3>{% trans "ПОДПИСЫВАТЬСЯ" %} </h3>
+                    <p>{% trans "Получайте полезные новости, советы и решения ваших проблем от наших экспертов." %} </p>
+                    <div class="subcriber-box">
+                        <form id="mc-form" class="mc-form" method="post" action="{% url 'create_subscription' %}">
+                            {% csrf_token %}
+                            <div class="newsletter-form">
+                                {{ subscription.email }}
+                                <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright-area wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="footer-text">
+                    <p>© 2022. MEDCENTER.KG</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="social">
+                    <ul class="social-links">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+</body>
+</html>

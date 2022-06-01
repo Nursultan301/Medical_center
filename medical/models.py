@@ -8,6 +8,8 @@ class Doctor(models.Model):
     position = models.CharField("Должность", max_length=50)
     img = models.ImageField(upload_to='doctors/')
 
+    objects = models.Manager
+
     class Meta:
         verbose_name = "Врач"
         verbose_name_plural = "Врачи"
@@ -23,6 +25,9 @@ class Enroll(models.Model):
         ("tue", "Среда"),
         ("wed", "Четверг"),
         ("thu", "Пятница"),
+        ("fri", "Суббота"),
+        ("sat", "Воскресенье"),
+
     )
 
     name = models.CharField("Имя", max_length=50)
@@ -43,7 +48,7 @@ class Enroll(models.Model):
 class Feedback(models.Model):
     name = models.CharField("Имя", max_length=50)
     email = models.EmailField("E-mail")
-    telephone = models.CharField("Телефон", max_length=50)
+    phone = models.CharField("Телефон", max_length=50)
     requirements = models.CharField("Требования", max_length=50)
     messages = models.TextField("Сообщения")
 
@@ -64,4 +69,4 @@ class Subscription(models.Model):
         verbose_name_plural = "Подписки"
 
     def __str__(self):
-        pass
+        return self.email
