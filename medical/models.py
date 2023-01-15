@@ -34,7 +34,6 @@ class Enroll(models.Model):
     email = models.EmailField("E-mail")
     weeks = models.CharField("Недели", max_length=50, choices=WEEK, default="sun")
     time = models.TimeField("Время")
-    doctors = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name="Врачи")
     messages = models.TextField("Сообщения")
 
     class Meta:

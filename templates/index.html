@@ -1,540 +1,457 @@
 <!DOCTYPE html>
 {% load static i18n %}
-<html lang="ru">
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>{% trans "Медицинский центр" %}</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="{% static 'images/fevicon.ico.png' %}" type="image/x-icon"/>
-    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <title>{% trans "Klinik - Clinic Website Template" %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+          rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %} " rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %} " rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-    <script src="{% static 'js/modernizer.js' %}"></script>
-
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
-<body class="clinic_version">
-<!-- LOADER -->
-<div id="preloader">
-    <img class="preloader" src="{% static 'images/loaders/heart-loading2.gif' %}" alt="loader">
-</div>
-<!-- END LOADER -->
-<header>
-    <div class="container">
-        <nav class="menu">
-            <div class="logo">
-                <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
-            </div>
-            <ul class="menu__list">
-                <li><a href="/">{% trans "Главная" %}</a></li>
-                <li><a data-scroll href="#about">{% trans "О нас" %}</a></li>
-                <li><a data-scroll href="#service">{% trans "Услуги" %}</a></li>
-                <li><a data-scroll href="#doctors">{% trans "Врачи" %}</a></li>
-                <li><a data-scroll href="#testimonials">{% trans "Отзывы" %}</a></li>
-                <li><a data-scroll href="#getintouch">{% trans "Контакты" %}</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
-<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
-     style="background-image:url('{% static 'images/slider-bg.png' %}'); height: 800;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="text-contant">
-                    <h2>
-                        <span class="center"><span class="icon"><img src="{% static 'images/icon-logo.png' %}" alt="#"/></span></span>
-                        <a href="" class="typewrite" data-period="2000"
-                           data-type='[ "{% trans "Добро пожаловать в медицинский центр" %}" ]'>
-                            <span class="wrap"></span>
-                        </a>
-                    </h2>
-                </div>
-            </div>
-        </div>
+<body>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
     </div>
 </div>
+<!-- Spinner End -->
 
-<div id="time-table" class="time-table-section">
-    <div class="container">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="row">
-                <div class="service-time one" style="background:#2895f1;">
-                    <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
-                    <h3>{% trans "Экстренная ситуация" %} </h3>
-                    <p>{% trans "Если у Вас есть проблемы только со здоровьем, звоните 103 — мы поможем." %} </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="row">
-                <div class="service-time middle" style="background:#0071d1;">
-                    <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                    <h3>{% trans "Рабочее время" %} </h3>
-                    <div class="time-table-section">
-                        <ul>
-                            <li><span class="left">{% trans "Понедельник - Пятница" %} </span><span class="right">8.00 – 18.00</span>
-                            </li>
-                            <li><span class="left">{% trans "Суббота" %} </span><span class="right">9.00 – 16.00</span></li>
-                            <li><span class="left">{% trans "Воскресенье" %} </span><span class="right">9.00 – 14.00</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="row">
-                <div class="service-time three" style="background:#0060b1;">
-                    <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
-                    <h3>{% trans "График работы клиники" %} </h3>
-                    <p>{% trans "Понедельник-Пятница: с 8:00 до 18:00" %}  <br> {% trans "Суббота: с 9:00 до 16:00" %}  <br> {% trans "Воскресенье: 9:00 – 14:00" %} 
-                    </p>
-                </div>
-            </div>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>Klinik</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="#home" class="nav-item nav-link">{% trans "Главная" %}</a>
+            <a href="#about" class="nav-item nav-link">{% trans "О нас" %}</a>
+            <a href="#services" class="nav-item nav-link">{% trans "Услуги" %}</a>
+            <a href="#doctors" class="nav-item nav-link">{% trans "Ваш доктор" %}</a>
+            <a href="#contacts" class="nav-item nav-link">{% trans "Контакты" %}</a>
+            <form class="nav-item nav-link"  action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                selected="selected"{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="{% trans 'Change' %}"/>
+            </form>
         </div>
     </div>
-</div>
+</nav>
+<!-- Navbar End -->
 
-<div id="about" class="section wow fadeIn">
-    <div class="container">
-        <div class="heading">
-            <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-            <h2>{% trans "О нас" %} </h2>
+<!-- Header Start -->
+<div class="container-fluid header bg-primary p-0 mb-5" id="home">
+    <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+        <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+            <h1 style="font-size: 40px" class="display-4 text-white mb-5">{% trans " Здоровье - одна из высших человеческих ценностей, источник счастья, радости, залог оптимальной реализации личности" %}</h1>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="message-box">
-                    <h4>{% trans "Что мы делаем" %} </h4>
-                    <h2>{% trans "Клиника Сервис" %} </h2>
-                    <p class="lead">
-                        {% blocktrans %}
-                             Здесь вы можете получить консультации специалистов различного профиля, прием ведут:
-                        Доктора медицинских наук, профессора, отличники здравоохранения и врачи высшей и первой
-                        категории.
-                        {% endblocktrans %}
-                       </p>
-                    <p>
-                        {% blocktrans %}
-                        Медицинский центр.kg оснащен отличной диагностической базой, где проводятся лабораторные,
-                        ультразвуковые, эндоскопические, электрофизиологические обследования на современном
-                        оборудовании.
-                        {% endblocktrans %}</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="post-media wow fadeIn">
-                    <img src="{% static 'images/about_03.jpg' %}" alt="" class="img-responsive">
-                    <a href="https://youtu.be/0we7ZLjFtds" data-rel="prettyPhoto[gal]" class="playbutton"><i
-                            class="flaticon-play-button"></i></a>
-                </div>
-            </div>
-        </div>
-        <hr class="hr1">
-        <div class="row">
-            <div class="owl-carousel slide-one">
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="{% static 'images/clinic_01.jpg' %}" data-rel="prettyPhoto[gal]"
-                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'images/clinic_01.jpg' %}" alt="" class="img-responsive">
-                    </div>
-                    <h3>{% trans "Цифровой центр управления" %} </h3>
-                </div>
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="{% static 'images/clinic_02.jpg' %}" data-rel="prettyPhoto[gal]"
-                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'images/clinic_02.jpg' %}" alt="" class="img-responsive">
-                    </div>
-                    <h3>{% trans "Гигиеническая операционная" %} </h3>
-                </div>
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="{% static 'images/clinic_03.jpg' %}" data-rel="prettyPhoto[gal]"
-                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'images/clinic_03.jpg' %}" alt="" class="img-responsive">
-                    </div>
-                    <h3>{% trans "Гигиеническая операционная" %} </h3>
-                </div>
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="{% static 'images/clinic_04.jpg' %}" data-rel="prettyPhoto[gal]"
-                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'images/clinic_04.jpg' %}" alt="" class="img-responsive">
-                    </div>
-                    <h3>{% trans "Врачи-специалисты" %} </h3>
-                </div>
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="{% static 'images/clinic_05.jpg' %}" data-rel="prettyPhoto[gal]"
-                           class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'images/clinic_05.jpg' %}" alt="" class="img-responsive">
-                    </div>
-                    <h3>{% trans "Врачи-специалисты" %} </h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="service" class="services wow fadeIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                <div class="inner-services">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon1.png' %}"
-                                                            alt="#"/></span>
-                            <h4><b>{% trans "Премиум Услуги</b> Опытные врачи. Нет лишних назначений. Качественный сервис" %} </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon2.png' %}"
-                                                            alt="#"/></span>
-                            <h4>
-                                {% blocktrans %}
-                                <b>Большая лаборатория</b> Информация об услугах медицинской лаборатории в Великом
-                                Новгороде,</h4>
-                                {% endblocktrans %}
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon3.png' %}"
-                                                            alt="#"/></span>
-                            <h4>
-                                {% blocktrans %}
-                                <b>Подробный специалист</b> Портал для специалистов (МИС в качестве сервиса)
-                                обеспечивает выполнение функций
-                                {% endblocktrans %}
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon4.png' %}"
-                                                            alt="#"/></span>
-                            <h4>
-                                {% blocktrans %}
-                                <b>Детский центр</b> На базе Малыша работают: Детский лечебно-консультационный,
-                                реабилитационный медицинский центр
-                                {% endblocktrans %}
-                                </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon5.png' %}"
-                                                            alt="#"/></span>
-                            <h4>
-                                {% blocktrans %}
-                                <b>Прекрасная инфраструктура</b> То, что в Малаге находится интернациональный аэропорт,
-                                хорошая инфраструктура, прекрасная гастрономия и туристические места
-                                {% endblocktrans %} </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="serv">
-                            <span class="icon-service"><img src="{% static 'images/service-icon6.png' %}"
-                                                            alt="#"/></span>
-                            <h4>
-                                {% blocktrans %}
-                                <b>Банк крови в любое время</b> Военнослужащий, являющийся донором, в день медицинского
-                                обследования освобождается от несения нарядов
-                                {% endblocktrans %} 
-                            </h4>
-                        </div>
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+            <div class="owl-carousel header-carousel">
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="">
+                    <div class="owl-carousel-text">
+                        <h1 style="font-size: 40px" class="display-1 text-white mb-0">{% trans "Кардиология" %}</h1>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="appointment-form">
-                    <h3><span>+</span> {% trans "Записаться на прием" %} </h3>
-                    <div class="form">
-                        <form method="post">
-                            {% csrf_token %}
-                            <fieldset>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            {{ form.name }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            {{ form.email }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-section">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            {{ form.weeks }}
-                                        </div>
-                                        <div class="form-group">
-                                                {{ form.time }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            {{ form.doctors }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            {{ form.messages }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="center">
-                                                <button type="submit">{% trans "Отправить" %}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="">
+                    <div class="owl-carousel-text">
+                        <h1 style="font-size: 40px" class="display-1 text-white mb-0">{% trans "Неврология" %}</h1>
+                    </div>
+                </div>
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{% static 'img/carousel-3.jpg' %}" alt="">
+                    <div class="owl-carousel-text">
+                        <h1 style="font-size: 40px" class="display-1 text-white mb-0">{% trans "Легочный" %}</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Header End -->
 
-<div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;"
-     data-scroll-id="doctors" tabindex="-1">
-    <div class="doctors__profile" style="text-align: center; margin-bottom: 60px;">
-        <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-        <h2>{% trans "Врачи" %} </h2>
-    </div>
+
+<!-- About Start -->
+<div class="container-xxl py-5" id="about">
     <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column">
+                    <img class="img-fluid rounded w-75 align-self-end" src="{% static 'img/about-1.jpg' %}" alt="">
+                    <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{% static 'img/about-2.jpg' %}" alt=""
+                         style="margin-top: -25%;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">{% trans "О нас" %}</p>
+                <h1 class="mb-4">{% trans "Почему вы должны доверять нам? Узнайте о нас!" %}</h1>
+                <p>{% trans "Медицинский центр работает в формате универсальной семейной клиники. В сферу нашей деятельности входят все виды медицинской помощи: диагностика, лечение, восстановление и профилактика." %}
+             </p>
+                <p class="mb-4">{% trans " Прием пациентов ведут квалифицированные врачи, за плечами которых длительная практика и широкие знания в своей сфере. В штате медицинских центров работают врачи высшей категории, 40 кандидатов медицинских наук, 4 доктора медицинских наук и 2 профессора." %}</p>
+                <p><i class="far fa-check-circle text-primary me-3"></i>{% trans "Качественное здравоохранение" %}</p>
+                <p><i class="far fa-check-circle text-primary me-3"></i>{% trans "Только квалифицированные врачи" %}</p>
+                <p><i class="far fa-check-circle text-primary me-3"></i>{% trans "Специалисты в области медицинских исследований" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
 
-        <div class="owl-carousel slide-two">
+
+<!-- Service Start -->
+<div class="container-xxl py-5" id="services">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">{% trans "Услуги" %}</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-heartbeat text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "Современное оборудование" %}</h4>
+                    <p class="mb-4">{% trans "Современное высокотехнологичное диагностическое оборудование. Мы предлагаем пациентам разные виды исследований: УЗИ (3-D, 4-D), эндоскопия, ЭКГ, ЭЭГ, РЭГ, ЭхоЭГ и др." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-x-ray text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "Комфортный стационар" %}</h4>
+                    <p class="mb-4">{% trans "Мы сделали все, чтобы пребывание в стационаре было комфортным, и вы чувствовали себя как дома. Как показывает практика, риск развития послеоперационных осложнений в 1,5 - 2 раза ниже, чем в традиционных больничных условиях." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-brain text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "4-е филиала по всему городу Бишкек" %}</h4>
+                    <p class="mb-4">{% trans "Поликлиника - Байтик Баатыра, 59 Центр пластической хирургии - Геологический переулок, 19 Филиал офтальмологии и оториноларингологии - Токтоналиева, 40/1· Хирургический центр - ​ Проспект Жибек-Жолу, 388" %}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-wheelchair text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "Опытные врачи разного профиля" %}</h4>
+                    <p class="mb-4">{% trans "Прием пациентов ведут квалифицированные врачи. В штате работают 16 врачей высшей категории, 9 кандидатов медицинских наук, 6 докторов медицинских наук и 5 профессоров." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-heartbeat text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "Уникальные операции" %}</h4>
+                    <p class="mb-4">{% trans "Это амбулаторные, стационарные вмешательства, которые проводятся как в плановом, так и в экстренном режиме. Центр хирургии включает несколько современных операционных, отделение реанимации, а также хирургический стационар." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                         style="width: 65px; height: 65px;">
+                        <i class="fa fa-vials text-primary fs-4"></i>
+                    </div>
+                    <h4 class="mb-3">{% trans "Удобная охраняемая парковка" %}</h4>
+                    <p class="mb-4">{% trans "Время – это, пожалуй, одно из самых ценных и важных достояний каждого человека. Мы это прекрасно осознаем и поэтому организовали удобную бесплатную парковку на территории медицинского центра, более чем на 30 машин." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+
+<!-- Feature Start -->
+<div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0" id="doctors">
+    <div class="container feature px-lg-0">
+        <div class="row g-0 mx-lg-0">
+            <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="p-lg-5 ps-lg-0">
+                    <p class="d-inline-block border rounded-pill text-light py-1 px-4">{% trans "Функции" %}</p>
+                    <h1 class="text-white mb-4">{% trans "Почему нужно выбрать нас" %}</h1>
+                    <p class="text-white mb-4 pb-2">{% trans "Мы стараемся сделать посещение медицинского центра комфортным для каждого пациента. Филиалы работают по удобному графику, у нас нет очередей. Персонал клиники — вежливые и деликатные сотрудники." %}</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                     style="width: 55px; height: 55px;">
+                                    <i class="fa fa-user-md text-primary"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <p class="text-white mb-2">{% trans "Опыт" %}</p>
+                                    <h5 class="text-white mb-0">{% trans "Врачи" %}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                     style="width: 55px; height: 55px;">
+                                    <i class="fa fa-check text-primary"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <p class="text-white mb-2">{% trans "Качество" %}</p>
+                                    <h5 class="text-white mb-0">{% trans "Услуги" %}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                     style="width: 55px; height: 55px;">
+                                    <i class="fa fa-comment-medical text-primary"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <p class="text-white mb-2">{% trans "Положительный" %}</p>
+                                    <h5 class="text-white mb-0">{% trans "Консультация" %}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
+                                     style="width: 55px; height: 55px;">
+                                    <i class="fa fa-headphones text-primary"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <p class="text-white mb-2">{% trans "24 часа" %}</p>
+                                    <h5 class="text-white mb-0">{% trans "Поддерживать" %}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/feature.jpg' %}"
+                         style="object-fit: cover;" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">{% trans "Врачи" %}</p>
+        </div>
+        <div class="row g-4 justify-content-evenly">
             {% for doctor in doctors %}
-            	<div class="item">
-                <div class="doctors__profile" style="text-align: center;">
-                    <img src="{{ doctor.img.url }}" alt="">
-                    <div class="doctors__profile title">
-                        <h4 style="background: linear-gradient(to right, #1d86df 0%, #39b49a 100%); padding: 8px 20px; color: #fff; margin: 15px 0;">
-                            {{ doctor.name }}</h4>
-                        <small style="display: inline-block; font-size: 14px; color: #1d86df;">{{ doctor.position }}</small>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ doctor.img.url }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-5 ">
+                            <h5>{{ doctor.name }}</h5>
+                            <p class="text-primary">{{ doctor.position }}</p>
+                        </div>
                     </div>
-                    <p style="font-size: 16px;">{{ doctor.description }}</p>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
 </div>
+<!-- Team End -->
 
-<div id="testimonials" class="section wb wow fadeIn">
+
+<!-- Appointment Start -->
+<div class="container-xxl py-5" id="contacts">
     <div class="container">
-        <div class="heading">
-            <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-            <h2>{% trans "Отзывы" %} </h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="testimonial clearfix">
-                    <div class="desc">
-                        <h3><i class="fa fa-quote-left"></i></h3>
-                        <p class="lead">Очень приятно заходить к вам. Так искренне и добродушно встречают и помогают.
-                            Так держать, молодцы!</p>
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">{% trans "Appointment" %}</p>
+                <h1 class="mb-4">{% trans "Запишитесь на прием к нашему врачу" %}</h1>
+                <p class="mb-4">{% trans "Здесь вы можете получить консультацию специалистов различного профиля, прием ведется авторами: докторами медицинских наук, профессорами, отличниками здравоохранения и врачами высших и первая категория. А также, мы предоставляем широкий спектр услуг в области эстетической, пластической, эндоскопическая хирургия и микрохирургия глаза. Одним из приоритетов нашей клиники является профессиональное медицинская помощь стала доступнее. Мы создали все условия для скорейшего выздоровления каждого пациент. Ваше здоровье - наша забота" %}</p>
+                <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                         style="width: 55px; height: 55px;">
+                        <i class="fa fa-phone-alt text-primary"></i>
                     </div>
-                    <div class="testi-meta">
-                        <img src="{% static 'images/test-01.jpg' %}" alt="" class="img-responsive alignleft">
-                        <h4>Диана Овганова<small> Отзыв в <span style="color: #8a3ab9;">Instagram</span></small></h4>
+                    <div class="ms-4">
+                        <p class="mb-2">{% trans "Позвоните нам сейчас" %}</p>
+                        <h5 class="mb-0">+996700 700 700</h5>
+                    </div>
+                </div>
+                <div class="bg-light rounded d-flex align-items-center p-5">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                         style="width: 55px; height: 55px;">
+                        <i class="fa fa-envelope-open text-primary"></i>
+                    </div>
+                    <div class="ms-4">
+                        <p class="mb-2">{% trans "Напишите нам сейчас" %}</p>
+                        <h5 class="mb-0">info@example.com</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="testimonial clearfix">
-                    <div class="desc">
-                        <h3><i class="fa fa-quote-left"></i></h3>
-                        <p class="lead">Ещё раз убедилась в том, что центр хороший и врачи знают своё дело. Всё
-                            понравилось. И обслуживание и врачи. Спасибо вам.</p>
-                    </div>
-                    <div class="testi-meta">
-                        <img src="{% static 'images/test-03.jpg' %}" alt="" class="img-responsive alignleft">
-                        <h4>Людмила Лукьянова <small> Отзыв в <span style="color: green;">2Gis</span></small></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="invis">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="testimonial clearfix">
-                    <div class="desc">
-                        <h3><i class="fa fa-quote-left"></i></h3>
-                        <p class="lead">Хорошая клиника. Остались очень хорошие впечатления. Чуткий и доброжелательный
-                            персонал. Профессиональный подход к своему делу.</p>
-                    </div>
-                    <div class="testi-meta">
-                        <img src="{% static 'images/test.jpg' %}" alt="" class="img-responsive alignleft">
-                        <h4>Айдана Кабиева <small> Отзыв в <span style="color: green;">2Gis</span></small></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="testimonial clearfix">
-                    <div class="desc">
-                        <h3><i class="fa fa-quote-left"></i></h3>
-                        <p class="lead">Очень приятно заходить к вам. Так искренне и добродушно встречают и помогают.
-                            Так держать, молодцы!</p>
-                    </div>
-                    <div class="testi-meta">
-                        <img src="{% static 'images/test-04.jpg' %}" alt="" class="img-responsive alignleft">
-                        <h4>Диана Овганова<small> Отзыв в <span style="color: #8a3ab9;">Instagram</span></small></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
-         <div class="container">
-            <div class="heading">
-               <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-               <h2>{% trans "Связаться" %}</h2>
-            </div>
-         </div>
-         <div class="contact-section">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.1567299374974!2d74.57484691541103!3d42.86953597915589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec83be79cb4c9%3A0x1d05e546c24b064!2zMTU0INGD0LsuINCn0L7QutC80L7RgNC-0LLQsCwg0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1653824690485!5m2!1sru!2skg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-         </div>
-         <div class="form-contant">
-            <form method="post" action="{% url 'create_feedback' %}">
-                {% csrf_token %}
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="form-group in_name">
-                         {{ feedback.name }}
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group in_email">
-                         {{ feedback.email }}
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group in_email">
-                         {{ feedback.phone }}
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group in_email">
-                         {{ feedback.requirements }}
-                     </div>
-                  </div>
-                  <div class="col-md-12">
-                     <div class="form-group in_message">
-                         {{ feedback.messages }}
-                     </div>
-                     <div class="actions">
-                        <input type="submit" value="Отправить сообщение" name="submit" id="submitButton" class="btn small" title="Submit Your Message!">
-                     </div>
-                  </div>
-               </div>
-            </form>
-         </div>
-      </div>
-<footer id="footer" class="footer-area wow fadeIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="logo padding">
-                    <a href=""><img src="{% static 'images/logo.svg' %}" alt=""></a>
-                    <p>{% trans "Медицинский центр «MEDCENTER.KG» — это многопрофильная клиника, расположенная в самом центре Бишкека ." %} </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="footer-info padding">
-                    <h3>{% trans "СВЯЖИТЕСЬ С НАМИ" %} </h3>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> {% trans "Чокморова, 154 — 0-3 этаж" %} </p>
-                    <p><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:lifecare@gmail.com">lifecare@gmail.com</a>
-                    </p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:996 700 500 500">+996 700 500 500</a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="subcriber-info">
-                    <h3>{% trans "ПОДПИСЫВАТЬСЯ" %} </h3>
-                    <p>{% trans "Получайте полезные новости, советы и решения ваших проблем от наших экспертов." %} </p>
-                    <div class="subcriber-box">
-                        <form id="mc-form" class="mc-form" method="post" action="{% url 'create_subscription' %}">
-                            {% csrf_token %}
-                            <div class="newsletter-form">
-                                {{ subscription.email }}
-                                <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                {{ form.name }}
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<div class="copyright-area wow fadeIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="footer-text">
-                    <p>© 2022. MEDCENTER.KG</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="social">
-                    <ul class="social-links">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                    </ul>
+                            <div class="col-12 col-sm-6">
+                                {{ form.email }}
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="date" id="date" data-target-input="nearest">
+                                    {{ form.weeks }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="time" id="time" data-target-input="nearest">
+                                    {{ form.time }}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                {{ form.messages }}
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3"
+                                        type="submit">{% trans "Записаться на прием" %}</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Appointment End -->
 
-<a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-light mb-4">{% trans "Адрес" %}</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Bishkek</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+996700 700 700</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social rounded-circle" href="#ссылка"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href="#ссылка"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href="#ссылка"><i
+                            class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social rounded-circle" href="#ссылка"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-light mb-4">{% trans "Меню" %}</h5>
+                <a href="#home" class="nav-item nav-link">{% trans "Главная" %}</a>
+                <a href="#about" class="nav-item nav-link">{% trans "О нас" %}</a>
+                <a href="#services" class="nav-item nav-link">{% trans "Услуги" %}</a>
+                <a href="#doctors" class="nav-item nav-link">{% trans "Ваш Доктор" %}</a>
+                <a href="#contacts" class="nav-item nav-link">{% trans "Контакты" %}</a>
+            </div>
 
-<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/all.js' %}"></script>
-<script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-light mb-4">{% trans "Новостная рассылка" %}</h5>
+                <form action="{% url 'create_subscription' %}" method="post">
+                    {% csrf_token %}
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        {{ subscription.email }}
+                        <button type="submit"
+                                class="btn btn-primary  position-absolute top-0 end-0">{% trans "Отправить" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-12 text-center mb-3 mb-md-0">
+                    &copy; <a class="border-bottom " href="#">{% trans "Your Site Name All Right Reserved." %} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/wow/wow.min.js' %} "></script>
+<script src="{% static 'lib/easing/easing.min.js' %} "></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %} "></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %} "></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %} "></script>
+<script src="{% static 'lib/tempusdominus/js/moment.min.js' %} "></script>
+<script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %} "></script>
+<script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %} "></script>
+
+<!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/scroll.js' %}"></script>
 </body>
+
 </html>

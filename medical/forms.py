@@ -1,4 +1,6 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
+
 
 from medical.models import Enroll, Feedback, Subscription
 
@@ -9,12 +11,11 @@ class EnrollForm(forms.ModelForm):
         fields = "__all__"
 
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Имя'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'E-mail'}),
-            'weeks': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Недели'}),
-            'time': forms.TimeInput(attrs={'class': 'form-control', 'placeholder': 'Время', 'type': 'time'}),
-            'doctors': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Врачи'}),
-            'messages': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Сообщения'}),
+            'name': forms.TextInput(attrs={'placeholder': _('Имя'), 'class': 'form-control border-0'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'E-mail', 'class': 'form-control border-0'}),
+            'weeks': forms.Select(attrs={'class': 'form-control', 'placeholder': _('Недели')}),
+            'time': forms.TimeInput(attrs={'class': 'form-control', 'placeholder': _('Время'), 'type': 'time'}),
+            'messages': forms.Textarea(attrs={'class': 'form-control', 'placeholder': _('Сообщения')}),
         }
 
 

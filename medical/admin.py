@@ -15,8 +15,8 @@ class DoctorAdmin(TranslationAdmin):
 
 @admin.register(Enroll)
 class EnrollAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'weeks', 'time', 'doctors')
-    readonly_fields = ('name', 'email', 'weeks', 'time', 'doctors', 'messages')
+    list_display = ('name', 'email', 'weeks', 'time')
+    readonly_fields = ('name', 'email', 'weeks', 'time', 'messages')
 
 
 @admin.register(Feedback)
