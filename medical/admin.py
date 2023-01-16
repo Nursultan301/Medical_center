@@ -19,12 +19,6 @@ class EnrollAdmin(admin.ModelAdmin):
     readonly_fields = ('name', 'email', 'weeks', 'time', 'messages')
 
 
-@admin.register(Feedback)
-class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone')
-    readonly_fields = ('name', 'email', 'phone', 'requirements', 'messages')
-
-
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
     list_display = ('email', 'date')
